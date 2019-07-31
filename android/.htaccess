@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^masuk$ siapandro_login.php [L]
+	RewriteRule ^loading$ siapandro_loading.php [L]
+	RewriteRule ^keluar$ siapandro_logout.php [L]
+	
+	RewriteRule ^m/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2&firhot2=$3&firhot3=$4&firhot4=$5&firhot5=$6&firhot6=$7 [L]
+	RewriteRule ^m/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2&firhot2=$3&firhot3=$4&firhot4=$5&firhot5=$6 [L]
+	RewriteRule ^m/(.*)/(.*)/(.*)/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2&firhot2=$3&firhot3=$4&firhot4=$5 [L]
+	RewriteRule ^m/(.*)/(.*)/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2&firhot2=$3&firhot3=$4 [L]
+	RewriteRule ^m/(.*)/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2&firhot2=$3 [L]
+	RewriteRule ^m/(.*)/(.*)$ siapandro_menu.php?menu_hot=$1&firhot1=$2 [L]
+	RewriteRule ^m/(.*)$ siapandro_menu.php?menu_hot=$1 [L]
+	RewriteRule ^m$ siapandro_menu.php [L]
+
+	Options All -Indexes
+</IfModule>
