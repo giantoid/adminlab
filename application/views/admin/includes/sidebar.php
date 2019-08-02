@@ -74,7 +74,7 @@
           <a href="<?php echo base_url('barang') ?>" class="nav-link active">
             <i class="icon-drawer3"></i>
             <span>
-              Data Barang
+              Data Aset
             </span>
           </a>
         </li>
@@ -90,8 +90,7 @@
           <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Laporan</span></a>
           <ul class="nav nav-group-sub" data-submenu-title="Menu">
             <li class="nav-item"><a href="<?php echo base_url('laporan/pemeriksaan') ?>" class="nav-link active">Pemeriksaan</a></li>
-            <li class="nav-item"><a href="<?php echo base_url('layout_2/LTR/material/full/index.html') ?>" class="nav-link">Umur Aset</a></li>
-            <li class="nav-item"><a href="<?php echo base_url('layout_3/LTR/material/full/index.html') ?>" class="nav-link">Layout 3</a></li>
+            <li class="nav-item"><a href="<?php echo base_url('laporan/data-aset') ?>" class="nav-link">Data Aset</a></li>
           </ul>
         </li>
         <!-- <li class="nav-item">

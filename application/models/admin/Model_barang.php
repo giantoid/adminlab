@@ -70,4 +70,9 @@ class Model_barang extends CI_Model
     $this->id_lab = $post['lab'];
     $this->db->update('aset', $this, array('id_aset' => $id_aset));
   }
+
+  public function getTahun()
+  {
+    return $this->db->get('tahun')->result();
+  }
 }

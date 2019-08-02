@@ -1,5 +1,6 @@
 <!-- Core JS files -->
 <script src="<?php echo base_url('global_assets/js/main/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('global_assets/js/date.js') ?>"></script>
 <script src="<?php echo base_url('global_assets/js/main/bootstrap.bundle.min.js') ?>"></script>
 <script src="<?php echo base_url('global_assets/js/plugins/loaders/blockui.min.js') ?>"></script>
 <script src="<?php echo base_url('global_assets/js/plugins/ui/ripple.min.js') ?>"></script>

@@ -550,3 +550,15 @@ function angka($rupiah)
     $angka_final = preg_replace($pattern, '', $rupiah);
     return $angka_final;
 }
+
+function umur($tgl)
+{
+    $tglb = $tgl;
+
+    $tglbe = new DateTime($tglb);
+    $today = new DateTime();
+
+    $diff = $today->diff($tglbe);
+    $umur = $diff->y;
+    return $umur;
+}

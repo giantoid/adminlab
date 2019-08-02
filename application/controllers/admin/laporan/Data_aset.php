@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pemeriksaan extends CI_Controller
+class Data_aset extends CI_Controller
 {
 
     function __construct()
@@ -13,23 +13,22 @@ class Pemeriksaan extends CI_Controller
 
     public function index()
     {
-        $this->load->view('admin/laporan/pemeriksaan');
+        $this->load->view('admin/laporan/data_aset');
     }
 
     public function filterTable()
     {
-        $list = $this->model_laporan->get_datatablest();
+        $list = $this->model_laporan->get_datatables();
         $data = array();
         foreach ($list as $cek) {
             $row = array();
             $row[] = $cek->id_aset;
-            $row[] = $cek->mk;
-            $row[] = date('d-m-Y H:m:s', strtotime($cek->tgl_periksa));
-            $row[] = $cek->status;
-            $row[] = $cek->kondisi;
-            $row[] = $cek->username;
+            $row[] = $cek->nama_aset;
+            $row[] = $cek->nama_jenis;
+            $row[] = $cek->nama_kelompok;
+            $row[] = date('d-m-Y', strtotime($cek->tgl_beli));
+            $row[] = umur($cek->tgl_beli) . ' tahun';
             $row[] = $cek->nama_lab;
-            $row[] = $cek->ket;
 
             //add html for action
             $data[] = $row;
@@ -37,8 +36,8 @@ class Pemeriksaan extends CI_Controller
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->model_laporan->count_allt(),
-            "recordsFiltered" => $this->model_laporan->count_filteredt(),
+            "recordsTotal" => $this->model_laporan->count_all(),
+            "recordsFiltered" => $this->model_laporan->count_filtered(),
             "data" => $data,
         );
         //output to json format

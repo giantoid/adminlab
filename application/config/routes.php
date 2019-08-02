@@ -57,3 +57,4 @@ $route['barang'] = 'admin/barang';
 $route['user'] = 'admin/user';
 $route['login'] = 'login';
 $route['laporan/pemeriksaan'] = 'admin/laporan/pemeriksaan';
+$route['laporan/data-aset'] = 'admin/laporan/data_aset';

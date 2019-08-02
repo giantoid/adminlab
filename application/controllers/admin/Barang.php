@@ -61,4 +61,9 @@ class Barang extends CI_Controller
     $data['dataAset'] = $this->model_barang->getAsetByID($id);
     $this->load->view('admin/detail_barang', $data);
   }
+
+  public function tahun()
+  {
+    echo json_encode($this->model_barang->getTahun());
+  }
 }
