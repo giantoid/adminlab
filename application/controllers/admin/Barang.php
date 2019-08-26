@@ -9,6 +9,7 @@ class Barang extends CI_Controller
     parent::__construct();
     $this->load->model('admin/model_barang');
     // $this->load->library('form_validation');
+    $this->load->library('encrypt');
   }
 
   public function index()

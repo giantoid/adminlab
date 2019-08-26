@@ -36,10 +36,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <!-- Basic datatable -->
                 <?php if ($this->session->flashdata('success')) { ?>
-                    <div class="alert alert-success border-0 alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
+                <div class="alert alert-success border-0 alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
                 <?php
                 } ?>
                 <!-- Basic datatable -->
@@ -71,20 +71,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <tbody>
                             <?php $no = 1;
                             foreach ($dataAset as $aset) : ?>
-                                <tr>
-                                    <td><?php echo $no++ ?></td>
-                                    <td><?php echo $aset->id_aset ?></td>
-                                    <td><?php echo $aset->nama_aset ?></td>
-                                    <td><?php echo $aset->nama_jenis ?></td>
-                                    <td><?php echo date('d-m-Y', strtotime($aset->tgl_beli)) ?></td>
-                                    <td width="14%">
-                                        <div class="btn-group"> <?php $id1 = ekrip("$aset->id_aset") ?>
-                                            <a href="<?= base_url('admin/barang/detail/' . $id1) ?>" class="btn btn-sm btn-success" data-popup="tooltip-custom" title="Detail" data-placement="bottom" data-delay="600"><i class="icon-eye"></i></a>
-                                            <a href="#" class="btn btn-sm btn-primary btedit" data-popup="tooltip-custom" title="Edit" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalEdit" data-id="<?php echo $id1 ?>"><i class="icon-pencil"></i></a>
-                                            <a href="#" class="btn btn-sm btn-danger bthapus" data-popup="tooltip-custom" title="Hapus" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalHapus" data-id="<?php echo $id1 ?>"><i class="icon-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $aset->id_aset ?></td>
+                                <td><?php echo $aset->nama_aset ?></td>
+                                <td><?php echo $aset->nama_jenis ?></td>
+                                <td><?php echo date('d-m-Y', strtotime($aset->tgl_beli)) ?></td>
+                                <td width="14%">
+                                    <div class="btn-group"> <?php $id1 = ekrip("$aset->id_aset") ?>
+                                        <a href="<?= base_url('admin/barang/detail/' . $id1) ?>" class="btn btn-sm btn-success" data-popup="tooltip-custom" title="Detail" data-placement="bottom" data-delay="600"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-sm btn-primary btedit" data-popup="tooltip-custom" title="Edit" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalEdit" data-id="<?php echo $id1 ?>"><i class="icon-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-danger bthapus" data-popup="tooltip-custom" title="Hapus" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalHapus" data-id="<?php echo $id1 ?>"><i class="icon-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -104,35 +104,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="modal-body">
                             <form action="<?php echo base_url('admin/barang/input') ?>" method="post">
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="id_aset">Kode Aset</label>
+                                    <label class="col-form-label col-lg-2" for="id_aset">Kode Aset<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="id_aset" placeholder="Masukkan kode aset..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="nama_aset">Nama Aset</label>
+                                    <label class="col-form-label col-lg-2" for="nama_aset">Nama Aset<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="nama_aset" placeholder="Masukkan nama aset..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="merk">Merk</label>
+                                    <label class="col-form-label col-lg-2" for="merk">Mer <span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="merk" placeholder="Masukkan merk..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="tipe">Tipe</label>
+                                    <label class="col-form-label col-lg-2" for="tipe">Tip <span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="tipe" placeholder="Masukkan tipe..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="jenis_aset">Jenis Aset</label>
+                                    <label class="col-form-label col-lg-2" for="jenis_aset">Jenis Aset<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <select data-placeholder="Pilih jenis aset..." name="jenis_aset" class="form-control select" id="show_data" data-fouc required>
 
@@ -141,7 +141,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="tgl_beli">Tanggal Pembelian</label>
+                                    <label class="col-form-label col-lg-2" for="tgl_beli">Tanggal Pembelian<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
@@ -153,27 +153,28 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="harga_beli">Harga Pembelian</label>
+                                    <label class="col-form-label col-lg-2" for="harga_beli">Harga Pembelian<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="harga_beli" placeholder="Masukkan harga beli..." id="rupiah" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="nilai_residu">Nilai Residu</label>
+                                    <label class="col-form-label col-lg-2" for="nilai_residu">Nilai Resid <span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="nilai_residu" placeholder="Masukkan nilai residu..." id="rupiah2" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="lab">Laboratorium</label>
+                                    <label class="col-form-label col-lg-2" for="lab">Laboratorium<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <select data-placeholder="Pilih laboratorium..." name="lab" class="form-control select" id="idlab" data-fouc required>
 
                                         </select>
                                     </div>
                                 </div>
+                                <span class="text-danger">* <i>wajib diisi!</i></span>
                         </div>
 
                         <div class="modal-footer">
@@ -388,9 +389,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         $('#merk').val(data[0].merk);
                         $('#tipe').val(data[0].tipe);
                         var idj = data[0].id_jenis;
-                        // var date = new Date(data[0].tgl_beli);
+                        var date = new Date(data[0].tgl_beli);
+                        var dt = $.format.date(date, "dd-MM-yyyy");
                         // console.log(date.toLocaleDateString('dd-MM-yyyy'));
-                        $('#tgl_beli').val(data[0].tgl_beli);
+                        $('#tgl_beli').val(dt);
                         $('.aa').val(formatRupiah(data[0].harga_beli, "Rp. "));
                         $('.ab').val(formatRupiah(data[0].nilai_residu, "Rp. "));
                         var idl = data[0].id_lab;

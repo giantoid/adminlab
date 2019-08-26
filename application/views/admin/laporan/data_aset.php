@@ -125,13 +125,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     "url": "<?php echo site_url('admin/laporan/data_aset/filterTable') ?>",
                     "type": "POST"
                 },
-
+                "deferRender": true,
                 columns: [{},
                     {},
                     {},
                     {},
                     {},
-                    {},
+                    {
+                        "render": function(data, type, row) {
+                            var html = ""
+                            if (data == '5 tahun') {
+                                html += '<div class="bg-danger">' + data + '</div>'
+                            } else if (data == '4 tahun') {
+                                html += '<div class="bg-warning">' + data + '</div>'
+                            } else {
+                                html += '<div class="bg-success">' + data + '</div>'
+                            }
+                            return html;
+                        }
+                    },
                     {}
                 ],
                 "stripeClasses": ['', '']
@@ -144,6 +156,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     table.column(4).search(this.value).draw();
                 }
             });
+            console.log(table.column(5).data());
+
         });
     </script>
 

@@ -36,10 +36,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                 <!-- Basic datatable -->
                 <?php if ($this->session->flashdata('success')) { ?>
-                    <div class="alert alert-success border-0 alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
+                <div class="alert alert-success border-0 alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
                 <?php
                 } ?>
                 <!-- Basic datatable -->
@@ -70,20 +70,20 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <tbody>
                             <?php $no = 1;
                             foreach ($dataUser as $user) : ?>
-                                <tr>
-                                    <td><?php echo $no++ ?></td>
-                                    <td><?php echo $user->fullname ?></td>
-                                    <td><?php echo $user->username ?></td>
-                                    <td><?php echo $user->password ?></td>
-                                    <td><?php echo $user->level ?></td>
-                                    <td width="14%">
-                                        <div class="btn-group"> <?php $id1 = ekrip("$user->id_user") ?>
-                                            <a href="<?= base_url('admin/user/detail/' . $id1) ?>" class="btn btn-sm btn-success" data-popup="tooltip-custom" title="Detail" data-placement="bottom" data-delay="600"><i class="icon-eye"></i></a>
-                                            <a href="#" class="btn btn-sm btn-primary btedit" data-popup="tooltip-custom" title="Edit" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalEdit" data-id="<?php echo $id1 ?>"><i class="icon-pencil"></i></a>
-                                            <a href="#" class="btn btn-sm btn-danger bthapus" data-popup="tooltip-custom" title="Hapus" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalHapus" data-id="<?php echo $id1 ?>"><i class="icon-trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $user->fullname ?></td>
+                                <td><?php echo $user->username ?></td>
+                                <td><?php echo $user->password ?></td>
+                                <td><?php echo $user->level ?></td>
+                                <td width="14%">
+                                    <div class="btn-group"> <?php $id1 = ekrip("$user->id_user") ?>
+                                        <a href="<?= base_url('admin/user/detail/' . $id1) ?>" class="btn btn-sm btn-success" data-popup="tooltip-custom" title="Detail" data-placement="bottom" data-delay="600"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-sm btn-primary btedit" data-popup="tooltip-custom" title="Edit" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalEdit" data-id="<?php echo $id1 ?>"><i class="icon-pencil"></i></a>
+                                        <a href="#" class="btn btn-sm btn-danger bthapus" data-popup="tooltip-custom" title="Hapus" data-placement="bottom" data-delay="600" data-toggle="modal" data-target="#modalHapus" data-id="<?php echo $id1 ?>"><i class="icon-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -103,33 +103,34 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <div class="modal-body">
                             <form action="<?php echo base_url('admin/user/input') ?>" method="post">
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="fullname">Nama Lengkap</label>
+                                    <label class="col-form-label col-lg-2" for="fullname">Nama Lengkap<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="fullname" placeholder="Masukkan nama lengkap..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="username">Username</label>
+                                    <label class="col-form-label col-lg-2" for="username">Username<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" name="username" placeholder="Masukkan username..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="password">Password</label>
+                                    <label class="col-form-label col-lg-2" for="password">Password<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <input type="password" class="form-control" name="password" placeholder="Masukkan password..." required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-form-label col-lg-2" for="level">Level</label>
+                                    <label class="col-form-label col-lg-2" for="level">Level<span class="text-danger">*</span></label>
                                     <div class="col-lg-10">
                                         <select data-placeholder="Pilih level..." name="level" class="form-control select" id="show_data" data-fouc required>
                                         </select>
                                     </div>
                                 </div>
+                                <span class="text-danger">* <i>wajib diisi!</i></span>
                         </div>
 
                         <div class="modal-footer">

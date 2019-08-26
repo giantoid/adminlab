@@ -6,9 +6,10 @@ class Model_barang extends CI_Model
 
   public function list_aset()
   {
-    $this->db->select('aset.*, aset_jenis.nama_jenis');
+    $this->db->select('aset.*, aset_jenis.nama_jenis, tb_lab.nama_lab');
     $this->db->from('aset');
     $this->db->join('aset_jenis', 'aset.id_jenis = aset_jenis.id_jenis');
+    $this->db->join('tb_lab', 'aset.id_lab = tb_lab.id_lab');
     $this->db->order_by('id_aset', 'DESC');
     $aset = $this->db->get();
     return $aset->result();
