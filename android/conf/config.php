@@ -4,11 +4,11 @@
 /* 
 -- -----------------------------------------------------------
 -- -----------------------------------------------------------
--- Nama File 	: autonumber.php  							--
+-- Nama File 	: config.php  							--
 -- Author    	: Gianto 							--
--- Website   	: https://sifirman.com						--
+-- Website   	: https://gianto.id						--
 -- Call		 	: 081328066333								--
--- Copyright [c] 2018 Gianto. All right reserved.	--
+-- Copyright [c] 2019 Gianto. All right reserved.	--
 -- -----------------------------------------------------------
 -- -----------------------------------------------------------
 */
